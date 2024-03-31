@@ -16,7 +16,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'is_user')
+    list_display = ('id', 'name', 'is_active')
 
 
 @admin.register(Media)

@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 
 
 class Skill(models.Model):
-    name = models.CharField(max_lenght=20, blank=True, null=True)
+    name = models.CharField(max_length=20, blank=True, null=True)
     score = models.IntegerField(default=80, blank=True, null=True)
     image = models.FileField(upload_to="skills", blank=True, null=True)
     is_key_skill = models.BooleanField(default=False)
@@ -89,7 +89,7 @@ class Media(models.Model):
 class Portfolio(models.Model):
     date = models.DateTimeField(blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
-    description = models.Charfield(max_length=500, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="portfolio")
     slug = models.SlugField(null=True, blank=True)
