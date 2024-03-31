@@ -133,3 +133,18 @@ class Blog(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Certificate(models.Model):
+    date = models.DateTimeField(blank=True, null=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
+    title = models.CharField(max_length=50, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = "Certificates"
+        verbose_name = "Certificate"
+
+    def __str__(self) -> str:
+        return self.name
