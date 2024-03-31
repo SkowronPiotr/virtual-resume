@@ -80,6 +80,7 @@ class Media(models.Model):
     def save(self, *args, **kwargs):
         if self.url:
             self.is_image = False
+        super(Media, self).save(*args, **kwargs)
 
     def __str__(self) -> str:
         return self.name
