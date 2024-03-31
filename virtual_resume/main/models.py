@@ -45,3 +45,20 @@ class ContactProfile(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Testimonial(models.Model):
+    thumbnail = models.ImageField(
+        blank=True, null=True, upload_to="testimonials")
+    name = models.CharField(max_length=200, blank=True, null=True)
+    role = models.CharField(max_length=200, blank=True, null=True)
+    quote = models.CharField(max_length=500, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = "Testimonials"
+        verbose_name = "Testimonial"
+        ordering = ["name"]
+
+    def __str__(self) -> str:
+        return self.name
